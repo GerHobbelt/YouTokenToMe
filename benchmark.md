@@ -56,6 +56,7 @@ All experiments were run on the following machine:
 The table below shows the dependence of performance on the number of threads for `YouTokenToMe`.
 
 ### Training 1GB
+
 |            | English | Russian | Chinese | Japanese |
 |------------|:-------:|:-------:|:-------:|:--------:|
 | 1 thread   |  62.1   |  58.1   |  140.3  |  187.5   |
@@ -65,6 +66,7 @@ The table below shows the dependence of performance on the number of threads for
 | 16 threads |  19.8   |  21.8   |  46.9   |   62.8   |
 
 ### Tokenization 1GB
+
 |            | English | Russian | Chinese | Japanese |
 |------------|:-------:|:-------:|:-------:|:--------:|
 | 1 thread   |  116.1  |  74.4   |  49.3   |   57.0   |

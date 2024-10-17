@@ -33,9 +33,11 @@ For example, the phrase ```Blazingly fast tokenization!``` can be tokenized into
 ```bash
 pip install youtokentome
 ```
+
 ## Python interface 
 
 ### Example
+
 Let's start with a self-contained example. 
 
 ```python
@@ -68,11 +70,13 @@ print(bpe.encode([test_text], output_type=yttm.OutputType.ID))
 print(bpe.encode([test_text], output_type=yttm.OutputType.SUBWORD))
 ```
 
-&nbsp;
+
 ### Training model
+
 ```python
 youtokentome.BPE.train(data, model, vocab_size, coverage, n_threads=-1, pad_id=0, unk_id=1, bos_id=2, eos_id=3)
 ```
+
 Trains BPE model and saves to file.
 
 **Args:**
@@ -90,8 +94,6 @@ Trains BPE model and saves to file.
 **Returns**: Class `youtokentome.BPE` with the loaded model.
  
 
-&nbsp;
-
 ### Model loading
 
 ```python
@@ -104,11 +106,13 @@ Class constructor. Loads the trained model.
 * `n_threads`: int, number of parallel threads used to run. 
     If equal to -1, then the maximum number of threads available will be used.
  
-&nbsp;
   
 ### Methods
+
 Class `youtokentome.BPE` has the following methods:
+
 #### encode 
+
 ```python
 encode(self, sentences, output_type=yttm.OutputType.ID, bos=False, eos=False, reverse=False, dropout_prob=0)
 ```
@@ -127,7 +131,7 @@ encode(self, sentences, output_type=yttm.OutputType.ID, bos=False, eos=False, re
  then a list of lists of integers or list of lists of strings will be returned
 respectively.
 
-&nbsp;
+
 #### vocab
 
 ```python
@@ -137,7 +141,7 @@ vocab(self)
 **Returns:** A list `vocab_size` strings. The i-th string in the list corresponds
  to i-th subword.
  
-&nbsp;
+
 #### vocab_size
 
 ```python
@@ -146,36 +150,43 @@ vocab_size(self)
 
 **Returns:** int. Size of vocabulary.
 
-&nbsp;
+
 #### subword_to_id
 
 ```python
 subword_to_id(self, subword)
 ```
+
 **Args:**
+
 * `subword`: string. 
 
 **Returns:** 
+
 Integer from the range [0, vocab_size-1]. Id of subword or,
  if there is no such subword in the vocabulary, `unk_id` will be 
 returned.
 
-&nbsp;
+
 #### id_to_subword 
 
 ```python
 id_to_subword(self, id)
 ```
+
 **Args:**
+
 * `id`: int, must be in the range [0, vocab_size-1]
 
 **Returns:** string. Subword from vocabulary by id.
   
-&nbsp;
+
 #### decode 
+
 ```python
 decode(self, ids, ignore_ids=None)
 ```  
+
 Convert each id to subword and concatenate with space symbol.
 
 **Args:**
